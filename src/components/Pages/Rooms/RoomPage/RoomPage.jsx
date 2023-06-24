@@ -10,9 +10,9 @@ const RoomPage = () => {
             .catch(error => console.error(error.message))
     }, [])
     return (
-        <div className='grid grid-cols-3 gap-3 my-10'>
+        <div className='grid grid-cols-4 gap-6 w-[2100px] mx-auto py-10'>
             {
-                rooms.map(room => <Room key={room.id} room={room}></Room>)
+                rooms.map(room => <Room key={room._id} room={room}></Room>)
             }
         </div>
     );

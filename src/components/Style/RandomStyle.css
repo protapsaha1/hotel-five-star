@@ -1,0 +1,144 @@
+*,
+*::after,
+::before {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* main slider container */
+.slider_main {
+    overflow: hidden;
+    width: 2100px;
+    height: 700px;
+    margin: 0 auto;
+}
+
+/* animation */
+
+@-webkit-keyframes slide_animation {
+    0% {
+        left: 0px;
+    }
+
+    10% {
+        left: 0px;
+    }
+
+    20% {
+        left: 2100px;
+    }
+
+    30% {
+        left: 2100px;
+    }
+
+    40% {
+        left: 4200px;
+    }
+
+    50% {
+        left: 4200px;
+    }
+
+    60% {
+        left: 2100px;
+    }
+
+    70% {
+        left: 2100px;
+    }
+
+    80% {
+        left: 0px;
+    }
+
+    90% {
+        left: 0px;
+    }
+
+    100% {
+        left: 0px;
+    }
+}
+
+/* images contain parents */
+.slider {
+    width: 3600px;
+    height: 800px;
+    margin: 0 0 0 -2400px;
+    position: relative;
+    -webkit-animation-name: slide_animation;
+    -webkit-animation-duration: 33s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-play-state: running;
+}
+
+
+/* image  */
+.image_slide {
+    width: 2100px;
+    height: 700px;
+    float: left;
+    position: relative;
+}
+
+/* ------------------------------- */
+
+
+/* .nav_container {
+    height: 100vh;
+    width: 70vw;
+    min-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+} */
+
+.nav_link {
+    position: relative;
+    text-decoration: none;
+    font-family: 'poppins', sans-serif;
+    color: #ffffff;
+    font-size: 25px;
+    letter-spacing: 0.5px;
+    padding: 0 10px;
+    margin-left: 12px;
+    margin-right: 12px;
+
+}
+
+.nav_link::after {
+    content: "";
+    position: absolute;
+    background-color: #ff3c78;
+    height: 5px;
+    width: 0%;
+    left: 0;
+    bottom: -25px;
+    transition: 0.3s;
+
+}
+
+.nav_link:hover {
+    color: rgb(228, 40, 40);
+}
+
+.nav_link:hover:after {
+    width: 100%;
+    /* background-color: rgb(63, 236, 63); */
+}
+
+.active_route {
+    content: "";
+    position: absolute;
+    background-color: #ff3c78;
+    height: 5px;
+    width: 100%;
+    left: 0;
+    bottom: -25px;
+    transition: 0.3s;
+
+}

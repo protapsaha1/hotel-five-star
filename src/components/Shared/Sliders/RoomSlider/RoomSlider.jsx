@@ -1,35 +1,33 @@
 import React, { useEffect, useState } from 'react';
+// import RoomCarousel from './RoomCarousel';
+import { SlArrowLeft, SlArrowRight } from 'react-icons/sl'
 
 const Slider = () => {
     const [images, setImages] = useState([]);
-    const [sliders, setSliders] = useState([]);
+    const [currentImage, setCurrentImage] = useState(0);
+    // const [sliders, setSliders] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:6001/images')
+        fetch('http://localhost:6001/room_slider')
             .then(res => res.json())
             .then(data => setImages(data))
             .catch(error => console.error(error.message))
     }, []);
 
-    // const slider = () => {
-    let img = 1;
-    setInterval(() => {
-        if (img === images.length) {
-            img = 0;
-        }
-        const imgUrl = images[img];
-        setSliders(imgUrl)
-        img++;
-
-    }, 1000)
-    // };
-
     return (
-        <div className='mt-16'>
-
-            {/* <h1>img{images.length}</h1> */}
-            {
-                /* images.map(image =>*/ <img className='w-full h-96' /*src={image.image_url} key={image.id}*/ />  /*)*/
-            }
+        <div className='relative w-[2100px] h-[800px] py-10 border-2 bg-red-500 mx-auto'>
+            <div
+                // style={{ backgroundImages: `url(${images[currentImage]})` }}
+                // className='  border my-2'
+            >
+            </div>
+            {/* leftarrow */}
+            <div className='absolute top-1/2 left-6 text-bold hover:text-white hover:shadow-2xl hover:left-5 hover:btn border-0 hover:btn-ghost hover:w-28 hover:h-28 hover:rounded-[50%]'>
+                <SlArrowLeft className='w-14 h-14' />
+            </div>
+            {/* rightarrow */}
+            <div className='absolute top-1/2 right-6 text-bold hover:text-white hover:shadow-2xl hover:right-5 hover:btn border-0 hover:btn-ghost hover:w-28 hover:h-28 hover:rounded-[50%]'>
+                <SlArrowRight className='w-14 h-14' />
+            </div>
         </div>
     );
 };
