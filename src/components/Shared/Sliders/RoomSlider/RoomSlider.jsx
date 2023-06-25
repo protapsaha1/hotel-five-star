@@ -12,9 +12,9 @@ const Slider = () => {
             .then(data => setImages(data))
             .catch(error => console.error(error.message))
     }, []);
-
+// TODO SLIDER ROOM
     return (
-        <div className='relative w-[2100px] h-[800px] py-10 border-2 bg-red-500 mx-auto'>
+        <div className='relative w-[2100px] h-[800px] py-10 bg-red-500 mx-auto'>
             <div
                 // style={{ backgroundImages: `url(${images[currentImage]})` }}
                 // className='  border my-2'

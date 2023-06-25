@@ -139,6 +139,26 @@
     width: 100%;
     left: 0;
     bottom: -25px;
-    transition: 0.3s;
+    /* font-size: 25px;
+    letter-spacing: 0.5px;
+    padding: 0 10px; */
+}
 
+
+/* reservation layout */
+.main_container {
+    width: 2100px;
+    margin: auto;
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    position: relative;
+}
+
+.left_nav {
+    width: 500px;
+    height: 80vh;
+    background-color: hsla(0, 0%, 100%, 0.813);
+    position: absolute;
+    left: 0;
 }

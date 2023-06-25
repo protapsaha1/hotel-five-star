@@ -2,8 +2,9 @@ import React from 'react';
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
 
 const FoodSlider = ({ image }) => {
+    // TODO SLIDER FOOD
     return (
-        <div className='relative w-[2100px] h-[800px] py-10 border-2 bg-red-500 mx-auto'>
+        <div className='relative w-[2100px] h-[800px] py-10 bg-red-500 mx-auto'>
             <div>
                 {/* <img src={image} className='w-full h-96 ' alt="" /> */}
             </div>

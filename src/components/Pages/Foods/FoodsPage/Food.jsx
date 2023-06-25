@@ -31,6 +31,7 @@ const Food = ({ food }) => {
             </div>
             <div className='flex justify-between items-center'>
                 {/* ratings */}
+                {/* NOT NEED HERE ITS NEED IN RESERVATION */}
                 <div className='mx-3 my-2'>
                     <Rating
                         quiet
@@ -41,14 +42,14 @@ const Food = ({ food }) => {
                         fullSymbol={<FaStar className='w-6 h-6 text-yellow-300' />}
                     />
                 </div>
-                <Link to={`/reservation/${_id}`}>
+                <Link to={`/reservation/my-foods/${_id}`}>
                     <button className='bg-pink-600 hover:bg-pink-500 px-5 py-2 text-white text-xl rounded-lg font-semibold m-4'>
                         Order
                     </button>
                 </Link>
             </div>
             <div className='flex justify-between p-4'>
-                <p className=' text-slate-800 text-xl font-bold'>ratings: {ratings}</p>
+                {ratings && <p className=' text-slate-800 text-xl font-bold'>ratings: {ratings}</p>}
                 <span className={love_react === 0 ? 'hidden' : 'flex text-slate-800 text-xl font-bold'}><FaHeart className='w-7 h-7 text-red-600 mr-1' />{love_react}</span>
             </div>
         </div>

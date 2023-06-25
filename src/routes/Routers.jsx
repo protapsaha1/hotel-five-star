@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../router/Main";
-// import ReservationLayout from "../router/ReservationLayout";
-// import ReserveRoom from "../components/Pages/Reservation/ReserveRoom/ReserveRoom";
+import ReservationLayout from "../router/ReservationLayout";
+import ReserveRoom from "../components/Pages/Reservation/ReserveRooms/ReserveRoom";
+import ReserveFood from "../components/Pages/Reservation/ReserveFoods/ReserveFood";
 import Login from "../components/UserAuthentication/Login/Login";
 import HomePage from "../components/Pages/Home/HomePage/HomePage";
 import ErrorPage from "../components/Pages/ErrorPage/ErrorPage";
@@ -35,39 +36,21 @@ const router = createBrowserRouter([
         path: '*',
         element: <ErrorPage />
 
+    },
+    {
+        path: 'reservation',
+        element: <ReservationLayout />,
+        children: [
+            {
+                path: 'my-rooms',
+                element: <ReserveRoom />
+            },
+            {
+                path: 'my-foods',
+                element: <ReserveFood />
+            }
+        ]
     }
-    // {
-    //     path: 'rooms',
-    //     element: <RoomLayout />,
-    //     children: [
-    //         {
-    //             path: ':room',
-    //             element: <RoomPage />
-    //         }
-    //     ]
-    // },
-
-    // {
-    //     path: 'foods',
-    //     element: <FoodLayout />,
-    //     children: [
-    //         {
-    //             path: ':food',
-    //             element: <FoodsPage />
-    //         }
-    //     ]
-    // },
-    // {
-    //     path: 'reservation',
-    //     element: <ReservationLayout />,
-    //     children: [
-    //         {
-    //             path: ':roomId',
-    //             element: <ReserveRoom />,
-    //             loader: ({ params }) => fetch(`http://localhost:6001/rooms/${params.roomId}`)
-    //         }
-    //     ]
-    // },
 
 ]);
 

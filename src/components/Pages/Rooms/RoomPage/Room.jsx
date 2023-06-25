@@ -7,7 +7,7 @@ const Room = ({ room }) => {
     const [bookmark, setBookmark] = useState(true);
     const { _id, bedImgUrl, roomPrice, roomStatus, availableRooms, roomClassification } = room;
     return (
-        <div className={availableRooms === 0 ? 'border-2 border-red-400 w-[500px] mx-auto rounded-lg shadow-xl bg-slate-50 blur-sm' : 'border w-[500px] mx-auto rounded-lg shadow-xl bg-slate-50'}>
+        <div className={availableRooms === 0 ? 'hidden' : 'border w-[500px] mx-auto rounded-lg shadow-xl bg-slate-50'}>
             <div className='h-96'>
                 <img src={bedImgUrl} className='w-full h-full rounded-lg p-3' alt="" />
             </div>
@@ -31,6 +31,7 @@ const Room = ({ room }) => {
                 </div>
             </div>
             <div className='flex justify-between items-center'>
+                {/* NOT NEED HERE ITS NEED IN RESERVATION */}
                 <div className='mx-3 my-2'>
                     <Rating
                         quiet
@@ -41,7 +42,7 @@ const Room = ({ room }) => {
                         fullSymbol={<FaStar className='w-6 h-6 text-yellow-300' />}
                     />
                 </div>
-                <Link disabled={availableRooms === 0} to={`/reservation/${_id}`}>
+                <Link disabled={availableRooms === 0} to={`/reservation/my-rooms/${_id}`}>
                     <button className='bg-pink-400 hover:bg-pink-600 px-5 py-2 text-white text-xl rounded-lg font-semibold m-4' disabled={availableRooms === 0} >Get</button>
                 </Link>
             </div>

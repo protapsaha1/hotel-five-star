@@ -1,15 +1,22 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
-import RightNav from '../components/Pages/Reservation/RightNav/RightNav';
+import { Link, Outlet } from 'react-router-dom';
 import Header from '../components/Shared/Navber/Header/Header';
+import '../components/Style/RandomStyle.css';
 
 const ReservationLayout = () => {
     return (
         <div>
             <Header></Header>
-            <div className='grid grid-rows-2 grid-flow-col gap-4 relative'>
-                <div className='row-span-3 col-span-2 absolute left-5'><Outlet></Outlet></div>
-                <div className='col-span-2 absolute right-0'><RightNav></RightNav></div>
+            <div className='main_container'>
+                <div>
+                    <Outlet></Outlet>
+                </div>
+                <div className='left_nav'>
+                    <ol>
+                        <li><Link to="/reservation/my-rooms">Reserve Rooms</Link></li>
+                        <li><Link to="/reservation/my-foods">Reserve Foods</Link></li>
+                    </ol>
+                </div>
             </div>
 
         </div>

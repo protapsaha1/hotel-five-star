@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../../Style/RandomStyle.css';
+import ActiveLink from '../../../Module/ActiveLink/ActiveLink';
 
 // sticky top-0 left-0 right-0 
 const Header = () => {
@@ -12,12 +13,14 @@ const Header = () => {
                         <h4 className='font-serif text-white text-4xl hover:border-0 hover:rounded-lg hover:bg-blue-400 hover:px-3 hover:py-2'><Link to="/">Hotel Five</Link></h4>
                     </div>
                     <div className='' >
-                        <Link to="/" className='nav_link'>Home</Link>
-                        <Link to="/rooms" className='nav_link'>Rooms</Link>
-                        <Link to="/foods" className='nav_link'>Foods</Link>
-                        <Link to="/reservation" className='nav_link'>Reservation</Link>
-                        <Link to="/contact" className='nav_link'>Contact</Link>
-                        <Link to="/history" className='nav_link'>History</Link>
+                        <ol className='flex'>
+                            <li className='nav_link'><Link to="/" >Home</Link></li>
+                            <li className='nav_link'><Link to="/rooms" >Rooms</Link></li>
+                            <li className='nav_link'><Link to="/foods" >Foods</Link></li>
+                            <li className='nav_link'><Link to="/reservation/my-rooms" >Reservation</Link></li>
+                            <li className='nav_link'><Link to="/contact">Contact</Link></li>
+                            <li className='nav_link'><Link to="/history" >History</Link></li>
+                        </ol>
                     </div>
                 </div>
                 <div>
