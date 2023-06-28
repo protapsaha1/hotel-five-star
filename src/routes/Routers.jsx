@@ -3,11 +3,18 @@ import Main from "../router/Main";
 import ReservationLayout from "../router/ReservationLayout";
 import ReserveRoom from "../components/Pages/Reservation/ReserveRooms/ReserveRoom";
 import ReserveFood from "../components/Pages/Reservation/ReserveFoods/ReserveFood";
-import Login from "../components/UserAuthentication/Login/Login";
+import Login from "../components/UserAuthentication/Authentication/Login/Login";
 import HomePage from "../components/Pages/Home/HomePage/HomePage";
 import ErrorPage from "../components/Pages/ErrorPage/ErrorPage";
 import Rooms from "../components/Pages/Rooms/Rooms/Rooms";
 import Foods from "../components/Pages/Foods/Foods/Foods";
+import SignUp from "../components/UserAuthentication/Authentication/SignUp/SignUp";
+import Profile from "../components/Pages/ProfileSettings/Profile/Profile";
+import Bookmarked from "../components/Pages/ProfileSettings/Bookmarked/Bookmarked";
+import Dashboard from "../router/Dashboard";
+import BookedFoods from "../components/Pages/ProfileSettings/Dashboard/Customer/BookedFoods/BookedFoods";
+import BookedRooms from "../components/Pages/ProfileSettings/Dashboard/Customer/BookedRooms/BookedRooms";
+import CustomerHome from "../components/Pages/ProfileSettings/Dashboard/Customer/CustomerHome/CustomerHome";
 
 const router = createBrowserRouter([
     {
@@ -23,12 +30,24 @@ const router = createBrowserRouter([
                 element: <Login />
             },
             {
+                path: 'sign-up',
+                element: <SignUp />
+            },
+            {
                 path: 'rooms',
                 element: <Rooms />
             },
             {
                 path: 'foods',
                 element: <Foods />,
+            },
+            {
+                path: 'profile',
+                element: <Profile />,
+            },
+            {
+                path: 'bookmark',
+                element: <Bookmarked />
             }
         ]
     },
@@ -49,6 +68,26 @@ const router = createBrowserRouter([
                 path: 'my-foods',
                 element: <ReserveFood />
             }
+        ]
+    },
+    {
+        path: 'dashboard',
+        element: <Dashboard />,
+        children: [
+            // Customer route
+            {
+                path: 'my-dash-home',
+                element: <CustomerHome />
+            },
+            {
+                path: 'booked-foods',
+                element: <BookedFoods />
+            },
+            {
+                path: 'booked-rooms',
+                element: <BookedRooms />
+            }
+            // Moderators
         ]
     }
 

@@ -2,3 +2,5 @@
 // than when i pay the is go in booked page,
 // In the booked only room table cart and each cart have see all btn
 // when i click the see all btn show all room data also rating and user satisfaction text.  
+
+// is dark mode = bg-gradient-to-r from-slate-900 and is white mode = bg-white

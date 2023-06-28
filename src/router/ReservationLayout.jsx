@@ -5,17 +5,17 @@ import '../components/Style/RandomStyle.css';
 
 const ReservationLayout = () => {
     return (
-        <div>
+        <div className='bg-white'>
             <Header></Header>
             <div className='main_container'>
-                <div>
-                    <Outlet></Outlet>
-                </div>
                 <div className='left_nav'>
                     <ol>
                         <li><Link to="/reservation/my-rooms">Reserve Rooms</Link></li>
                         <li><Link to="/reservation/my-foods">Reserve Foods</Link></li>
                     </ol>
+                </div>
+                <div className='out' >
+                    <Outlet></Outlet>
                 </div>
             </div>
 
