@@ -1,10 +1,12 @@
 import React from 'react';
 import { FaFacebook, FaPhoneAlt, FaTwitter } from 'react-icons/fa';
+import useAuth from '../../Module/Hooks/useAuth';
 
 const Footer = () => {
+    const { theme } = useAuth();
     return (
-        <footer className='w-full bg-slate-700'>
-            <div className='h-96 w-[2100px] mx-auto bg-slate-700 py-20' >
+        <footer className={theme === "light" ? 'w-full bg-slate-700' : 'w-full bg-[#161616]'}>
+            <div className={theme === "light" ? 'h-96 w-[2100px] mx-auto bg-slate-700 py-20' : 'h-96 w-[2100px] mx-auto bg-[#161616] py-20'} >
                 <div className='flex justify-between'>
                     <div className=''>
                         <h1 className='text-white text-4xl font-serif'>Hotel Five</h1>
@@ -39,12 +41,14 @@ const Footer = () => {
                 </div>
             </div>
             {/* <hr /> */}
-            <div className="footer footer-center w-[2100px] mx-auto p-4 bg-slate-900 text-base-content">
-                <div className='bg-slate-900'>
-                    <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
+            <div className={theme === "light" ? 'bg-slate-900 w-full' : 'bg-black w-full'}>
+                <div div className={theme === "light" ? "footer footer-center w-[2100px] mx-auto p-4 bg-slate-900 text-base-content" : "footer footer-center w-[2100px] mx-auto p-4 bg-black text-base-content"}>
+                    <div className='bg-slate-900'>
+                        <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
+                    </div>
                 </div>
             </div>
-        </footer>
+        </footer >
     );
 };
 

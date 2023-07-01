@@ -9,10 +9,10 @@ const ReservationLayout = () => {
             <Header></Header>
             <div className='main_container'>
                 <div className='left_nav'>
-                    <ol>
+                    <ul>
                         <li><Link to="/reservation/my-rooms">Reserve Rooms</Link></li>
                         <li><Link to="/reservation/my-foods">Reserve Foods</Link></li>
-                    </ol>
+                    </ul>
                 </div>
                 <div className='out' >
                     <Outlet></Outlet>

@@ -3,17 +3,19 @@ import Hotel from '../../../../assets/images/hotel.jpeg';
 import { Link } from 'react-router-dom';
 import '../../../Style/RandomStyle.css'
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
+import useAuth from '../../../Module/Hooks/useAuth';
 // import AwesomeSlider from 'react-awesome-slider';
 // // import AwesomeSliderStyles from '../../../Style/RandomStyle.css';
 // import 'react-awesome-slider/dist/custom-animations/fold-out-animation.css';
 // import 'react-awesome-slider/dist/styles.css';
 
 const Banner = () => {
+    const { theme } = useAuth();
     return (
         <div className="hero flex w-[2100px] mx-auto pb-10">
-            <div className="hero-content text-center text-neutral-content w-[400x] h-[800px] shadow-2xl bg-orange-50">
+            <div className={theme === "light" ? "hero-content text-center text-neutral-content w-[400x] h-[800px] shadow-2xl bg-orange-50" : "hero-content text-center text-neutral-content w-[400x] h-[800px] shadow-2xl bg-[#212429]"}>
                 <div className="max-w-md">
-                    <h3 className='font-semibold text-2xl px-10 mb-5 text-slate-900 font-serif text-left'>Hello our honorable customer, this is our <span className='text-fuchsia-500 font-bold font-serif'>HOTEL FIVE Official Website</span>.
+                    <h3 className={theme === "light" ? 'font-semibold text-2xl px-10 mb-5 text-slate-900 font-serif text-left' : 'font-semibold text-2xl px-10 mb-5 text-white font-serif text-left'}>Hello our honorable customer, this is our <span className={theme === "light" ? 'text-fuchsia-500 font-bold font-serif' : 'text-sky-500 font-bold font-serif'}>HOTEL FIVE Official Website</span>.
                         Here you can reserve room from your home. And take our quality service.
                         Thanks to takes our website hospitalities.</h3>
                     <Link to="/rooms"><button className='bg-sky-400 hover:bg-sky-600 px-4 py-3 rounded-lg text-white font-bold text-2xl text-center mx-auto mt-10'>Get Services</button></Link>

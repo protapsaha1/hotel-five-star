@@ -15,6 +15,13 @@ import Dashboard from "../router/Dashboard";
 import BookedFoods from "../components/Pages/ProfileSettings/Dashboard/Customer/BookedFoods/BookedFoods";
 import BookedRooms from "../components/Pages/ProfileSettings/Dashboard/Customer/BookedRooms/BookedRooms";
 import CustomerHome from "../components/Pages/ProfileSettings/Dashboard/Customer/CustomerHome/CustomerHome";
+import ModeratorHome from "../components/Pages/ProfileSettings/Dashboard/Moderators/MorderatorHome/ModeratorHome";
+import AddRooms from "../components/Pages/ProfileSettings/Dashboard/Moderators/AddRooms/AddRooms";
+import AddFoods from "../components/Pages/ProfileSettings/Dashboard/Moderators/AddFoods/AddFoods";
+import AdminHome from "../components/Pages/ProfileSettings/Dashboard/Admin/AdminHome/AdminHome";
+import AllCustomer from "../components/Pages/ProfileSettings/Dashboard/Admin/AllCustomer/AllCustomer";
+import AllModerators from "../components/Pages/ProfileSettings/Dashboard/Admin/AllModerators/AllModerators";
+import ManageUsers from "../components/Pages/ProfileSettings/Dashboard/Admin/ManageUsers/ManageUsers";
 
 const router = createBrowserRouter([
     {
@@ -86,8 +93,45 @@ const router = createBrowserRouter([
             {
                 path: 'booked-rooms',
                 element: <BookedRooms />
-            }
+            },
+            
+            
+            
+            
             // Moderators
+            {
+                path: 'moderator-dash-home',
+                element: <ModeratorHome />
+            },
+            {
+                path: 'add-foods',
+                element: <AddFoods />
+            },
+            {
+                path: 'add-rooms',
+                element: <AddRooms />
+            },
+            
+            
+            
+            
+            // admin route
+            {
+                path: 'admin-dash-home',
+                element: <AdminHome />
+            },
+            {
+                path: 'all-customer',
+                element: <AllCustomer />
+            },
+            {
+                path: 'all-moderator',
+                element: <AllModerators />
+            },
+            {
+                path: 'manage-users',
+                element: <ManageUsers />
+            }
         ]
     }
 

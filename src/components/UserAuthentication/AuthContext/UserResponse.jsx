@@ -15,6 +15,14 @@ const googleProvider = new GoogleAuthProvider();
 const UserResponse = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [theme, setTheme] = useState("light");
+
+    const toggleWebTheme = () => {
+        setTheme(current => current === "light" ? "dark" : "light");
+        // document.setL
+        localStorage.setItem("theme", theme)
+        console.log(theme)
+    };
 
     const googleSignIn = () => {
         setLoading(true);
@@ -82,7 +90,10 @@ const UserResponse = ({ children }) => {
         updateUser,
         emailVerify,
         resetPass,
-        newPass
+        newPass,
+        setTheme,
+        theme,
+        toggleWebTheme
     }
 
     return (

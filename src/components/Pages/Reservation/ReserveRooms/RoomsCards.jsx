@@ -1,7 +1,7 @@
 import React from 'react';
 
 const RoomsCards = ({ room }) => {
-    const { bedImgUrl, roomClassification, roomPrice } = room;
+    const { bed_image, room_classification, price } = room;
     return (
         <div className='border bg-slate-50 rounded-2xl w-[1550px] h-full mx-auto my-3'>
             <div className='h-16 p-3'>
@@ -10,11 +10,11 @@ const RoomsCards = ({ room }) => {
             </div>
             <hr />
             <div className='w-full h-[700px] mx-auto'>
-                <img className='w-full h-full' src={bedImgUrl} />
+                <img className='w-full h-full' src={bed_image} />
             </div>
             <div className='h-16 p-3 flex justify-between py-3'>
-                <h1 className='text-3xl text-slate-800 font-bold'>{roomClassification}</h1>
-                <h1 className='text-xl text-slate-800 font-bold'>Price : ${roomPrice}</h1>
+                <h1 className='text-3xl text-slate-800 font-bold'>{room_classification}</h1>
+                <h1 className='text-xl text-slate-800 font-bold'>Price : ${price}</h1>
             </div>
         </div>
     );
