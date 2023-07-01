@@ -131,7 +131,7 @@ const SignUp = () => {
                             <option value="Others">Others</option>
                         </select>
                     </div>
-                    <input type="submit" value="Register" className={theme === "light" ? 'text-3xl text-slate-800 font-semibold text-center my-10  px-5 py-4 hover:bg-zinc-200 hover:text-slate-950 hover:rounded-xl hover:px-5 hover:py-4' : 'text-3xl text-slate-300 font-semibold text-center my-10  px-5 py-4 hover:bg-slate-800 hover:text-white hover:rounded-xl hover:px-5 hover:py-4'} />
+                    <input type="submit" value="Register" className={theme === "light" ? 'text-3xl text-slate-800 font-semibold text-center my-10  px-5 py-4 hover:bg-slate-700 hover:text-white hover:rounded-xl hover:px-5 hover:py-4' : 'text-3xl text-slate-300 font-semibold text-center my-10  px-5 py-4 hover:bg-slate-800 hover:text-white hover:rounded-xl hover:px-5 hover:py-4'} />
                 </form>
             </div>
             <div className='w-[800px] mx-auto p-3 '>

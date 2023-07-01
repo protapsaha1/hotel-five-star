@@ -10,7 +10,7 @@ const Main = () => {
     const location = useLocation();
     const head_foot = location.pathname.includes('/login') || location.pathname.includes('/sign-up');
     return (
-        <div className={theme === "light" ? 'bg-gradient-to-r from-sky-200 to-white ' : 'bg-[#0f1929] '}>
+        <div className={theme === "light" ? 'bg-white ' : 'bg-[#0f1929] '}>
             {head_foot || <Header></Header>}
             {/* <SubHeader></SubHeader>  */}
 

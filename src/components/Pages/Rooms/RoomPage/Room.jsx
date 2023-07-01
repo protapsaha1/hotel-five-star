@@ -24,11 +24,11 @@ const Room = ({ room }) => {
                 <div>
                     <div className='flex justify-end p-0' >
                         <span onClick={() => setBookmark(!bookmark)}>
-                            {bookmark ? <FaRegBookmark className='w-8 h-8 mr-0 text-slate-950' /> : <FaBookmark className='w-8 h-8 mr-0 text-slate-950' />}
+                            {bookmark ? <FaRegBookmark className={theme === "light" ? 'w-8 h-8 mr-0 text-slate-950 cursor-pointer' : 'w-8 h-8 mr-0 text-white cursor-pointer'} /> : <FaBookmark className={theme === "light" ? 'w-8 h-8 mr-0 text-slate-950 cursor-pointer' : 'w-8 h-8 mr-0 text-slate-100 cursor-pointer'} />}
                         </span>
                         {/* react share using all ready install */}
                         <span>
-                            <FaShareAlt className='w-8 h-8 ms-1 text-slate-950' />
+                            <FaShareAlt className={theme === "light" ? 'w-8 h-8 ms-1 text-slate-950 cursor-pointer' : 'w-8 h-8 ms-1 text-slate-100 cursor-pointer'} />
                         </span>
                     </div>
                 </div>
