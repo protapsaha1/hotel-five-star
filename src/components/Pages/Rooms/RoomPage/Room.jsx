@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 // import Rating from 'react-rating';
 import { FaBookmark, FaRegBookmark, FaRegStar, FaShareAlt, FaStar, FaStarHalf } from "react-icons/fa";
 import useAuth from '../../../Module/Hooks/useAuth';
+import ShareMe from '../../../Module/ShareMe/ShareMe';
 // import { Link } from 'react-router-dom';
 
 const Room = ({ room }) => {
@@ -27,9 +28,14 @@ const Room = ({ room }) => {
                             {bookmark ? <FaRegBookmark className={theme === "light" ? 'w-8 h-8 mr-0 text-slate-950 cursor-pointer' : 'w-8 h-8 mr-0 text-white cursor-pointer'} /> : <FaBookmark className={theme === "light" ? 'w-8 h-8 mr-0 text-slate-950 cursor-pointer' : 'w-8 h-8 mr-0 text-slate-100 cursor-pointer'} />}
                         </span>
                         {/* react share using all ready install */}
-                        <span>
-                            <FaShareAlt className={theme === "light" ? 'w-8 h-8 ms-1 text-slate-950 cursor-pointer' : 'w-8 h-8 ms-1 text-slate-100 cursor-pointer'} />
-                        </span>
+                        <div className="dropdown dropdown-end">
+                            <span tabIndex={0} >
+                                <FaShareAlt className={theme === "light" ? 'w-8 h-8 ms-1 text-slate-950 cursor-pointer' : 'w-8 h-8 ms-1 text-slate-100 cursor-pointer'} />
+                            </span>
+                            <ul tabIndex={0} className="dropdown-content p-2 shadow bg-slate-400 rounded-box w-[300px] ">
+                                <ShareMe />
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

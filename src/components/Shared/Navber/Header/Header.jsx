@@ -40,7 +40,7 @@ const Header = () => {
                             {isProfile === true || isBookmark === true ?
                                 <>
                                     <li><Link to="/bookmark" className='nav_link'>Bookmark</Link></li>
-                                    <li><Link to="/dashboard" className='nav_link'>Dashboard</Link></li>
+                                    <li><Link to="/dashboard/add-foods" className='nav_link'>Dashboard</Link></li>
                                 </>
                                 :
                                 ''

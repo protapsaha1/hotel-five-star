@@ -26,7 +26,7 @@ const Food = ({ food }) => {
                     {/* react of customer */}
                     <span onClick={() => setLove(!love)}>
                         {
-                            love ? <FaRegHeart className='w-10 h-10 text-slate-800 font-thin cursor-pointer' /> : <FaHeart className='w-10 h-10 text-red-600 cursor-pointer' />
+                            love ? <FaRegHeart className={theme === "light" ? 'w-10 h-10 text-slate-800 font-thin cursor-pointer' : 'w-10 h-10 text-white font-thin cursor-pointer'} /> : <FaHeart className='w-10 h-10 text-red-600 cursor-pointer' />
                         }
                     </span>
                 </div>
